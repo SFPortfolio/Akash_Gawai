@@ -62,17 +62,17 @@ Use the email address you want on your commits, such as your verified GitHub ema
 
 ## 4. Publish with GitHub Pages
 
-1. In your repository, open **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Choose **main** and **/(root)**.
-4. Click **Save**.
-5. Wait for deployment. It can take up to 10 minutes.
-6. Return to **Settings → Pages → Visit site** to get the real published URL.
+The repository includes a GitHub Actions workflow that publishes this folder when changes are pushed to `main`.
 
-With the repository name used above, the URL will normally be:
+1. In your repository, open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push to `main` or run **Deploy portfolio to GitHub Pages** from the **Actions** tab.
+4. Wait for the workflow to finish, then open its deployment URL or return to **Settings → Pages → Visit site**.
+
+The site URL for the `SFPortfolio/Akash_Gawai` repository is normally:
 
 ```text
-https://YOUR_USERNAME.github.io/akash-gawai-portfolio/
+https://sfportfolio.github.io/Akash_Gawai/
 ```
 
 This GitHub Pages copy is public and does not require visitors to sign in to ChatGPT. It contains the portfolio contact information visible in `index.html`.
@@ -93,7 +93,7 @@ The GitHub Pages copy and the ChatGPT-hosted copy are separate deployments. Chan
 
 ## Common fixes
 
-- **404 after publishing:** confirm `index.html` is directly at the repository root and Pages uses `main` → `/(root)`.
+- **404 after publishing:** confirm Pages uses **GitHub Actions** as its source and the deployment workflow completed successfully.
 - **remote origin already exists:** run `git remote -v` to inspect the configured remote. This clean ZIP contains no existing Git history or remote.
 - **Animations are off:** use the **Motion on/off** control. The website also respects an operating-system reduced-motion setting.
 - **Styling is missing:** keep every supplied CSS and JavaScript file beside `index.html` with the same filename.
