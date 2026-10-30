@@ -1,0 +1,26 @@
+﻿/* A compact availability card that follows the portfolio's existing palette. */
+.relocation{padding-block:24px 32px}
+.journey-card{display:grid;grid-template-columns:minmax(230px,.7fr) minmax(0,1.3fr);border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.journey-visual{position:relative;min-height:290px;background:radial-gradient(ellipse at 50% 45%,#24485e 0,#102333 60%,#0d1b2b 100%);overflow:hidden}
+.journey-badge{position:absolute;z-index:1;top:14px;left:14px;display:flex;gap:8px;align-items:center;font-size:11px;color:#e6f1e8;background:#102333dc;border:1px solid #45616b;padding:5px 10px;border-radius:30px}
+.journey-hint{position:absolute;bottom:12px;left:10px;right:10px;text-align:center;color:#a8c4d4;font-size:8px;letter-spacing:.4px;pointer-events:none}
+#flight-globe{position:absolute;inset:0}
+#flight-globe canvas{display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+#flight-globe canvas:active{cursor:grabbing}
+.journey-status{position:absolute;bottom:34px;left:16px;right:16px;text-align:center;font-size:11px;color:#c3dbe8;pointer-events:none}
+.journey-status:empty{display:none}
+.journey-controls{padding:22px 24px;min-width:0}
+.journey-controls h2{font-size:28px;line-height:1.2;margin-bottom:8px;letter-spacing:-1px}
+.journey-controls>p{font-size:11px;line-height:1.6}
+.city-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:16px 0 10px}
+.city-list button{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:44px;padding:8px 10px;border:1px solid var(--line);border-radius:5px;color:var(--text);background:var(--bg);text-align:left;font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+.city-list button[data-city="3"]{grid-column:span 2}
+.city-list button[aria-pressed="true"]{border-color:var(--lime);background:color-mix(in srgb,var(--lime) 10%,var(--bg));color:var(--lime)}
+.city-list button:hover{border-color:#70c7f9}
+.city-list button span{color:#70c7f9}
+.city-list .city-origin{font-size:7px;letter-spacing:.3px}
+.journey-controls .route-caption{font-size:11px;color:var(--lime);min-height:18px;overflow-wrap:anywhere}
+.journey-replay{background:none;border:0;padding:6px 0;min-height:44px;color:var(--muted);font-size:11px}
+.journey-replay:disabled{opacity:.5}
+@media(max-width:900px){.journey-card{grid-template-columns:minmax(210px,.7fr) minmax(0,1fr)}.journey-controls{padding:18px}.journey-controls h2{font-size:24px}.city-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.relocation{padding-block:16px 24px}.journey-card{grid-template-columns:1fr}.journey-visual{min-height:160px}.journey-controls{padding:16px}.journey-controls h2{font-size:24px}.city-list{margin-top:12px}.journey-badge{top:10px;left:10px;font-size:10px}.journey-hint{font-size:7px}.journey-controls .route-caption{min-height:0}.journey-replay{padding-bottom:0}}
