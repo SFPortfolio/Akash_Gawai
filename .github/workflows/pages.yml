@@ -23,10 +23,15 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - name: Prepare both portfolio URLs
+        run: |
+          mkdir -p _site/akash-gawai-portfolio
+          cp -a akash-gawai-portfolio/. _site/
+          cp -a akash-gawai-portfolio/. _site/akash-gawai-portfolio/
       - name: Upload portfolio files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./akash-gawai-portfolio
+          path: ./_site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
